@@ -16,7 +16,6 @@ $ltu_theme_includes = [
     'inc/admin/project-meta-box.php',
     'inc/admin/project-list-table.php',
     'inc/api/projects.php',
-    'inc/svg.php',
 ];
 
 foreach ( $ltu_theme_includes as $include ) {

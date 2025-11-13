@@ -27,7 +27,7 @@ get_header();
                 </span>
             </header>
 
-            <dl class="project-single__meta">
+            <dlv class="project-single__meta">
                 <?php if ( $client ) : ?>
                     <div>
                         <dt><?php esc_html_e( 'Client', 'ltu-theme' ); ?></dt>
@@ -48,11 +48,7 @@ get_header();
                         <dd><?php echo esc_html( date_i18n( get_option( 'date_format' ), strtotime( $date ) ) ); ?></dd>
                     </div>
                 <?php endif; ?>
-            </dl>
-
-            <div class="project-single__content entry-content">
-                <?php the_content(); ?>
-            </div>
+            </dlv>
         </article>
         <?php endwhile; ?>
     <?php else : ?>
