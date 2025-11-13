@@ -1,0 +1,93 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.project-single {
+  max-width: px-to-rem(960);
+  margin: 0 auto;
+  padding-top: px-to-rem(32);
+
+  &__card {
+    @include card;
+    padding: clamp(px-to-rem(24), 4vw, px-to-rem(48));
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(8);
+    margin-bottom: px-to-rem(24);
+  }
+
+  &__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: px-to-rem(12);
+    color: $color-muted;
+    margin: 0;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: clamp(px-to-rem(32), 5vw, px-to-rem(48));
+  }
+
+  &__status {
+    align-self: flex-start;
+    padding: px-to-rem(6) px-to-rem(16);
+    border-radius: 999px;
+    font-size: px-to-rem(14);
+    font-weight: 600;
+    background: rgba(37, 99, 235, 0.1);
+    color: $color-accent;
+  }
+
+  &__status--in-progress {
+    background: $color-warning-bg;
+    color: $color-warning;
+  }
+
+  &__status--completed {
+    background: $color-success-bg;
+    color: $color-success;
+  }
+
+  &__meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(px-to-rem(180), 1fr));
+    gap: px-to-rem(16);
+    margin: 0 0 px-to-rem(32);
+  }
+
+  &__meta div {
+    background: rgba(15, 23, 42, 0.04);
+    border-radius: px-to-rem(12);
+    padding: px-to-rem(16);
+  }
+  
+  &__meta dt {
+    margin: 0 0 px-to-rem(4);
+    font-size: px-to-rem(12);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $color-muted;
+  }
+
+  &__meta dd {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  &__content {
+    line-height: 1.7;
+  }
+}
+
+
+
+
+
+
+
+
+
+

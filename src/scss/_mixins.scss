@@ -1,0 +1,27 @@
+@import './variables.scss'; 
+
+@function px-to-rem($size) {
+  @return $size / $base-font-size * 1rem;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == 'md' {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == 'sm' {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+}
+
+@mixin card {
+  background: $color-surface;
+  border-radius: $box-radius;
+  box-shadow: 0 px-to-rem(20) px-to-rem(40) rgba(15, 23, 42, 0.08);
+}

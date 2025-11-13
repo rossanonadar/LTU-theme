@@ -1,0 +1,133 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.projects-listing {
+  max-width: px-to-rem(1200);
+  margin: 0 auto;
+  padding: clamp(px-to-rem(24), 4vw, px-to-rem(48));
+  @include card;
+
+  &__header {
+    margin-bottom: px-to-rem(24);
+  }
+  
+  &__title {
+    margin: 0;
+    font-size: clamp(px-to-rem(32), 5vw, px-to-rem(44));
+  }
+  
+  &__description {
+    margin: px-to-rem(8) 0 0;
+    color: $color-muted;
+  }
+}
+
+
+.projects-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: px-to-rem(12);
+  margin-bottom: px-to-rem(24);
+  align-items: center;
+  
+  &__control {
+    padding: px-to-rem(10) px-to-rem(14);
+    border: 1px solid $color-border;
+    border-radius: 999px;
+    min-width: px-to-rem(180);
+    background: #fff;
+  }
+  
+  &__submit {
+    padding: px-to-rem(10) px-to-rem(24);
+    border-radius: 999px;
+    border: none;
+    background: $color-accent;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 px-to-rem(10) px-to-rem(20) rgba(37, 99, 235, 0.25);
+    cursor: pointer;
+  }
+  
+  &__reset {
+    color: $color-muted;
+    text-decoration: none;
+    font-weight: 500;
+    display: none;
+
+    &.is-visible {
+      display: inline-flex;
+    }
+  }
+  
+  &__table-wrapper {
+    overflow-x: auto;
+
+  }
+}
+
+.projects-summary {
+  padding: px-to-rem(21) 0 0 0;
+}
+
+.projects-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+    thead th {
+    text-align: left;
+    padding: px-to-rem(12) px-to-rem(16);
+    font-size: px-to-rem(13);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $color-muted;
+    border-bottom: 1px solid $color-border;
+    }
+
+    tbody tr {
+    background: rgba(37, 99, 235, 0.02);
+    }
+    
+    tbody tr + tr td {
+    border-top: 1px solid rgba(15, 23, 42, 0.05);
+    }
+    
+    tbody td {
+    padding: px-to-rem(16);
+    vertical-align: middle;
+    }
+  
+    .project-link {
+      font-weight: 600;
+      text-decoration: none;
+      color: $color-primary;
+    }
+}
+
+
+
+@include respond('md') {
+
+  .projects-table thead {
+    display: none;
+    tbody tr {
+       display: grid;
+       grid-template-columns: repeat(2, minmax(0, 1fr));
+       border-radius: px-to-rem(12);
+       margin-bottom: px-to-rem(16);
+     }
+   
+    tbody td {
+       display: flex;
+       flex-direction: column;
+     }
+   
+    tbody td::before {
+       content: attr(data-label);
+       font-size: px-to-rem(12);
+       text-transform: uppercase;
+       color: $color-muted;
+       margin-bottom: px-to-rem(4);
+     }
+  }
+}
