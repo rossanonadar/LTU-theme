@@ -64,9 +64,7 @@ $projects = new WP_Query( $query_args );
             ]
         );
 
-        get_template_part(
-            'template-parts/projects/table',
-            null,
+        get_template_part('template-parts/projects/table', null,
             [
                 'projects'       => $projects,
                 'status_choices' => $status_choices,
